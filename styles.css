@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* class to use when hiding elements */
+.hidden {
+  display: none;
+}
+
+body {
+  min-width: 900px;
+  background-color: lightgrey;
+}
+
+ul li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  font-size: 17px;
+}
+
+h2 {
+  margin-top: 20px;
+  margin-left: 70px;
+}
+
+/* for login/submit buttons */
+.button {
+  padding: 3px 6px;
+  background-color: green;
+  border: none;
+  border-radius: 2.5px;
+}
+
+#navWrap {
+  font-size: 20px;
+  width: 150px;
+  text-align: center;
+}
+
+/* on hover, makes list item background light grey */
+#submenu li:hover {
+  background: lightblue;
+}
+
+#menuLabel {
+  background-color: darkgrey;
+  border-bottom: 4px solid black;
+}
+
+#navWrap ul li:hover > ul {
+  /* add code to trigger submenu on hover */
+}
+
+/* will hide second ul */
+#submenu {
+  /*  display: none; */
+  position: relative;
+  right: 40px;
+}
+
+/* container for the users drop down menu */
+#containerUsers {
+  width: 300px;
+  height: 300px;
+  background-color: white;
+  border-radius: 4px;
+  border: 2px solid black;
+  margin: 100px auto;
+}
+
+/* drop down menu */
+#users {
+  width: 200px;
+  margin: 40px auto;
+}
+
+/* user types */
+.userBtn {
+  width: 110px;
+  padding: 5px 0;
+  background-color: lightgrey;
+}
