@@ -1,12 +1,11 @@
 
 
 function hide() {
-  var $users = document.querySelector("#containerUsers")
+  var $users = document.querySelector("#container-users")
   $users.classList.add("hidden");
 }
 
-var $userBtn = document.querySelectorAll(".userBtn")
+var $userBtn = document.querySelectorAll(".user-btns")
 for (var i = 0; i < $userBtn.length; i++) {
-  var add = $userBtn[i]
-  add.addEventListener("click", hide)
+  var add = $userBtn[i].addEventListener("click", hide)
 }
