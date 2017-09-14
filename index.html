@@ -6,7 +6,7 @@
     <title>Teacher's P.E.T.</title>
   </head>
   <body>
-    <div id="container-users" class="">
+    <div id="container-users" class="hidden">
       <h2>Teachers P.E.T.</h2>
       <div id="users">
         <nav id="nav-wrap" class="">
@@ -27,7 +27,7 @@
         </nav>
       </div>
     </div>
-    <div id="teacher-container" class="hidden">
+    <div id="teacher-container" class="">
       <div class="screen-left">
         <nav id="students">
           <ul class="">
@@ -43,10 +43,30 @@
             <li class="student-btns">Student 10</li>
           </ul>
         </nav>
+        <div id="parent-info">
+          <span>Parent Information:</span>
+          <div id="parent-form">
+            <form>
+              <fieldset>
+                  <textarea name="parent-info" id="p-info-input" rows="10">
+                  </textarea>
+              </fieldset>
+              <div>
+                <button class="button" id="p-info-button" type="submit" value="submit info">Submit Info</button>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
       <div class="screen-right">
-      </div>
+        <!--
+        <div id="attendance">
+        <input type="checkbox" name="attendance"/>
+        <p>Is present?</p>
+        </div>
+      </div> -->
     </div>
+  </div>
     <div id="student-container" class="hidden">
     </div>
     <div id="parent-container" class="hidden">
