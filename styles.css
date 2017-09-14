@@ -35,6 +35,12 @@ h2 {
   border-radius: 2.5px;
 }
 
+.screen-left {
+  width: 275px;
+  height: auto;
+  border-right: 3px groove black;
+}
+
 #container-users {
   width: 300px;
   height: 300px;
@@ -137,8 +143,9 @@ span {
   position: relative;
   width: 100%;
   text-align: center;
-  background-color: lightgray;
-  border-bottom: 3px solid darkgray;
+  background-color: #4e76ff;
+  color: white;
+  border-bottom: 3px solid #2544b2;
 }
 
 #p-info-input {
@@ -165,4 +172,10 @@ textarea {
   margin: 0;
   position: relative;
   left: -9px;
+}
+
+#attendance {
+  position: relative;
+  bottom: 420px;
+  left: 390px;
 }
