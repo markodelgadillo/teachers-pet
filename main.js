@@ -8,7 +8,6 @@ var $div = document.createElement('div')
 var $menu = document.getElementById('student-menu')
 $menu.textContent = "Students"
 
-/* changes here too */
 for (var i = 0; i < students.length; i++) {
   var $li = document.createElement('li')
   $li.setAttribute('class', 'student-btns')
@@ -17,7 +16,6 @@ for (var i = 0; i < students.length; i++) {
   $menu.appendChild($li)
 }
 
-/* start here */
 function addName(event) {
   var id = event.target.getAttribute('data-id')
   for (var i = 0; i < students.length; i++) {
@@ -33,12 +31,9 @@ function addName(event) {
 }
 
 var $li = document.querySelectorAll('.student-btns')
-for (var i = 0; i < students.length; i++) {
-$li[i].addEventListener('click', addName)
-}
-
-
-
+  for (var i = 0; i < students.length; i++) {
+    $li[i].addEventListener('click', addName)
+  }
 
 var $users = document.querySelector("#container-users")
 var $teacher = document.querySelector("#teacher-container")
@@ -64,8 +59,6 @@ for (var i = 0; i < $userBtn.length; i++) {
   $userBtn[i].addEventListener("click", hide)
 }
 
-
-
 function setParent() {
   var $info = document.getElementById("p-info-input")
   var set = $info.value
@@ -77,6 +70,5 @@ function setParent() {
 
 var $info = document.getElementById("p-info-input")
 var $form = document.getElementById("parent-form")
-
 var $parentBtn = document.getElementById('p-info-button')
 $parentBtn.addEventListener("click", setParent)
