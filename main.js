@@ -1,7 +1,7 @@
 var students = [
   {id:"1", name: "Melissa", grade:"5", parents: [{name1: "null", name2:"null"}]},
   {id:"2", name: "Jeff", grade: "4", parents: [{name1:"null", name2:"null"}]},
-  {id:"3", name: "Vanessa", grade: "5", parents: [{name1:"null", name2:"null"}]}
+  {id:"3", name: "Vanessa", grade: "6", parents: [{name1:"null", name2:"null"}]}
 ]
 
 var $div = document.createElement('div')
@@ -23,7 +23,8 @@ function addName(event) {
   for (var i = 0; i < students.length; i++) {
     if (students[i].id === id) {
        var $studentDetails = document.createElement('div')
-       $studentDetails.textContent = students[i].name
+       $studentDetails.textContent = students[i].name + ":" + " " +
+       "Grade " + students[i].grade
        var $details = document.querySelector('.student-details')
        $details.innerHTML = ''
        $details.appendChild($studentDetails)
