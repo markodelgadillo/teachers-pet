@@ -1,7 +1,7 @@
 var students = [
-  {id:"1", name: "Melissa", grade:"5", parents: [{name1: "null", name2:"null"}]},
-  {id:"2", name: "Jeff", grade: "4", parents: [{name1:"null", name2:"null"}]},
-  {id:"3", name: "Vanessa", grade: "6", parents: [{name1:"null", name2:"null"}]}
+  {id:"1", name: "Melissa", grade:"5", notes: [{Notes: "null"}], parents: [{name1: "null", name2:"null"}]},
+  {id:"2", name: "Jeff", grade: "4", notes: [{Notes: "null"}], parents: [{name1:"null", name2:"null"}]},
+  {id:"3", name: "Vanessa", grade: "6", notes: [{Notes: "null"}], parents: [{name1:"null", name2:"null"}]}
 ]
 
 var $div = document.createElement('div')
@@ -74,9 +74,7 @@ var $parentBtn = document.getElementById('p-info-button')
 $parentBtn.addEventListener("click", setParent)
 
 var formTypes = [
-  {id:'1', name:'Homework'},
-  {id:'2', name:'Notes to student'},
-  {id:'3', name:'Notes to parents'}
+  {id:'1', name:'Notes to student'},
 ]
 
 var $hwDiv = document.querySelector('#forms')
@@ -102,5 +100,13 @@ $button.setAttribute('type', 'submit')
 $hwForm.appendChild($button)
 
 $button.addEventListener('click', function () {
-  
+  if ($button.id === 'teacherBtn') {
+    var notes = document.querySelectorAll('[data-id]')
+    var value = notes[1].value
+    var hw = document.createElement('p')
+    hw.textContent = value
+    $hwform.appendChild(hw)
+    return btnId("teacherBtn")
+  } else if ($button.id === 'studentBtn') {
+    }
 })
