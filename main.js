@@ -1,7 +1,7 @@
 var students = [
-  {id:"1", name: "Melissa", grade:"5", parents: [{name1: "null", name2:"null"}]},
-  {id:"2", name: "Jeff", grade: "4", parents: [{name1:"null", name2:"null"}]},
-  {id:"3", name: "Vanessa", grade: "6", parents: [{name1:"null", name2:"null"}]}
+  {id:"1", name: "Melissa", grade:"5", notes: [{Notes: "null"}], parents: [{name1: "null", name2:"null"}]},
+  {id:"2", name: "Jeff", grade: "4", notes: [{Notes: "null"}], parents: [{name1:"null", name2:"null"}]},
+  {id:"3", name: "Vanessa", grade: "6", notes: [{Notes: "null"}], parents: [{name1:"null", name2:"null"}]}
 ]
 
 var $div = document.createElement('div')
@@ -72,3 +72,41 @@ var $info = document.getElementById("p-info-input")
 var $form = document.getElementById("parent-form")
 var $parentBtn = document.getElementById('p-info-button')
 $parentBtn.addEventListener("click", setParent)
+
+var formTypes = [
+  {id:'1', name:'Notes to student'},
+]
+
+var $hwDiv = document.querySelector('#forms')
+
+for (var i = 0; i < formTypes.length; i++) {
+  var $hwForm = document.createElement('form')
+  $hwForm.setAttribute('method', 'post')
+  $hwForm.setAttribute('data-id', formTypes[i].id)
+  var $label = document.createElement('label')
+  $label.innerHTML = formTypes[i].name
+  var $text = document.createElement('textarea')
+  $text.setAttribute('rows', '3')
+  $text.setAttribute('maxlength', '300')
+  $text.setAttribute('class', 'notes')
+  $hwDiv.appendChild($hwForm)
+  $hwForm.appendChild($label)
+  $hwForm.appendChild($text)
+}
+
+var $button = document.createElement('input')
+$button.setAttribute('class', 'button')
+$button.setAttribute('type', 'submit')
+$hwForm.appendChild($button)
+
+$button.addEventListener('click', function () {
+  if ($button.id === 'teacherBtn') {
+    var notes = document.querySelectorAll('[data-id]')
+    var value = notes[1].value
+    var hw = document.createElement('p')
+    hw.textContent = value
+    $hwform.appendChild(hw)
+    return btnId("teacherBtn")
+  } else if ($button.id === 'studentBtn') {
+    }
+})

@@ -198,3 +198,16 @@ textarea {
   top: -30px;
   background-color: darkgrey;
 }
+
+#forms {
+  width: 380px;
+  height: 375px;
+  position: relative;
+  top: 100px;
+  left: 100px;
+}
+
+.notes {
+  width: 375px;
+  height: 100px;
+}
