@@ -3,72 +3,100 @@ var students = [
   {id:"2", name: "Jeff", grade: "4", parents: [{name1:"null", name2:"null"}]},
   {id:"3", name: "Vanessa", grade: "6", parents: [{name1:"null", name2:"null"}]}
 ]
+var notes = []
+function renderStudentDetails(id) {
+  var $studentDetails = document.createElement('div')
 
-var $div = document.createElement('div')
-var $menu = document.getElementById('student-menu')
-$menu.textContent = "Students"
-
-for (var i = 0; i < students.length; i++) {
-  var $li = document.createElement('li')
-  $li.setAttribute('class', 'student-btns')
-  $li.textContent = students[i].name
-  $li.setAttribute('data-id', students[i].id) //here!
-  $menu.appendChild($li)
-}
-
-function addName(event) {
-  var id = event.target.getAttribute('data-id')
   for (var i = 0; i < students.length; i++) {
     if (students[i].id === id) {
-       var $studentDetails = document.createElement('div')
-       $studentDetails.textContent = students[i].name + ":" + " " +
-       "Grade " + students[i].grade
-       var $details = document.querySelector('.student-details')
-       $details.innerHTML = ''
-       $details.appendChild($studentDetails)
+      $studentDetails.textContent = students[i].name + ":" + " " +
+      "Grade " + students[i].grade
+      $studentDetails.appendChild(renderNotesForm(id))
     }
   }
+  return $studentDetails
 }
+function renderNotesForm(id) {
+  var $form = document.createElement('form')
+  var $text = document.createElement('textarea')
+  $text.setAttribute('row', '3')
+  $text.setAttribute('maxlength', '300')
+  $text.setAttribute('id', 'notes-area')
+  var $button = document.createElement('button')
+  $button.setAttribute('data-id', id)
+  $button.setAttribute('id', 'notes-btn')
+  $button.classList.add('button')
+  $button.textContent = 'Submit'
 
-var $li = document.querySelectorAll('.student-btns')
+  $form.appendChild($text)
+  $form.appendChild($button)
+  $button.addEventListener('click', function(event) {
+    var id = event.target.getAttribute('data-id')
+    var note = {
+      id: id,
+      text: $text.value
+    }
+
+    notes.push(note)
+  })
+
+  return $form
+}
+function renderStudentMenu(students) {
+  var $menu = document.createElement('ul')
+  $menu.textContent = 'Students'
+  $menu.setAttribute('id', 'student-menu')
+
   for (var i = 0; i < students.length; i++) {
-    $li[i].addEventListener('click', addName)
+    var $li = document.createElement('li')
+    $li.setAttribute('class', 'student-btns')
+    $li.textContent = students[i].name
+    $li.setAttribute('data-id', students[i].id)
+
+    $li.addEventListener('click', function (event) {
+      var $details = document.querySelector('#student-details')
+      var id = event.target.getAttribute('data-id')
+
+      $details.innerHTML = ''
+      $details.appendChild(renderStudentDetails(id))
+    })
+
+    $menu.appendChild($li)
   }
 
-var $users = document.querySelector("#container-users")
-var $teacher = document.querySelector("#teacher-container")
-var $student = document.querySelector("#student-container")
-var $parent = document.querySelector("#parent-container")
-var $userBtn = document.querySelectorAll(".menu1-btns")
+  return $menu
+}
 
-function hide(event) {
+function showStudentMenu() {
+  var $menu = renderStudentMenu(students)
+  var $students = document.querySelector('#students')
+  $students.appendChild($menu)
+}
+
+function swapView(event) {
+  var $users = document.querySelector("#container-users")
   $users.classList.toggle("hidden")
+
   var id = event.target.getAttribute("id")
-    for (var i = 0; i < $userBtn.length; i++) {
-      if (id === "teacher"){
-          $teacher.classList.toggle("hidden")
-      } else if (id === "student") {
-          $student.classList.toggle("hidden")
-        } else {
-          $parent.classList.toggle("hidden")
-        }
-    }
+
+  switch(id) {
+    case "teacher":
+      var $teacher = document.querySelector("#teacher-container")
+      $teacher.classList.remove("hidden")
+      showStudentMenu()
+      break;
+    case "student":
+      var $student = document.querySelector("#student-container")
+      $student.classList.remove("hidden")
+      break;
+    case "parent":
+      var $parent = document.querySelector("#parent-container")
+      $parent.classList.remove("hidden")
+      break;
+  }
 }
 
-for (var i = 0; i < $userBtn.length; i++) {
-  $userBtn[i].addEventListener("click", hide)
+var $users = document.querySelectorAll(".menu1-btns")
+for (var i = 0; i < $users.length; i++) {
+  $users[i].addEventListener("click", swapView)
 }
-
-function setParent() {
-  var $info = document.getElementById("p-info-input")
-  var set = $info.value
-  var $set = document.createElement('p')
-  $set.textContent = set
-  $form.innerHTML = ""
-  $form.appendChild($set)
-}
-
-var $info = document.getElementById("p-info-input")
-var $form = document.getElementById("parent-form")
-var $parentBtn = document.getElementById('p-info-button')
-$parentBtn.addEventListener("click", setParent)
