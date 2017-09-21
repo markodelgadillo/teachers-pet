@@ -55,8 +55,12 @@ h2 {
   height: 500px;
   float: right;
   position: relative;
-  bottom: 450px;
+  bottom: 170px;
   right: 30px;
+}
+
+.parent-inputs {
+  margin: 5px 0;
 }
 
 #container-users {
@@ -113,7 +117,7 @@ h2 {
   color: white;
   width: 160px;
   height: auto;
-  margin: 70px auto auto 30px;
+  margin: 70px auto auto 55px;
   background-color: black;
   overflow-x: hidden;
   overflow-y: auto;
@@ -153,10 +157,20 @@ h2 {
 }
 
 #parent-info {
-  border: 2px solid black;
-  width: 160px;
-  height: 210px;
+  position: relative;
+  bottom: 140px;
+  left: 270px;
+  background-color: lightblue;
+  width: 200px;
+  height: 130px;
   margin: 70px auto auto 30px;
+  padding-left: 30px;
+}
+
+#parents-box {
+  position: relative;
+  width: 100px;
+  height: 75px;
 }
 
 span {
@@ -189,8 +203,8 @@ fieldset {
 }
 
 textarea {
-  width: 400px;
-  height: 200px;
+  width: 350px;
+  height: 40px;
   resize: none;
   padding: 0;
   margin: 0 auto;
@@ -209,6 +223,10 @@ textarea {
 
 #notes-area {
   position: relative;
-  top: 40px;
-  left: 70px;
+  top: 130px;
+  left: 150px;
+}
+
+#parent-button {
+  position: relative;
 }
