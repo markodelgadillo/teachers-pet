@@ -175,8 +175,12 @@ h2 {
 
 #parents-box {
   position: relative;
-  width: 100px;
-  height: 75px;
+  bottom: 10px;
+  right: 84px;
+  width: 300px;
+  height: 200px;
+  background-color: orange;
+  z-index: 2;
 }
 
 #student-notes-label {

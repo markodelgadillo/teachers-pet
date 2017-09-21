@@ -22,7 +22,6 @@ function renderStudentDetails(id) {
       $studentDetails.appendChild($studentGrade)
       $studentDetails.appendChild(renderNotesForm(id))
       $studentDetails.appendChild(renderParentInfo(id))
-      $studentDetails.appendChild($parentsBox)
     }
   }
   return $studentDetails
@@ -155,8 +154,6 @@ function renderParentInfo (id) { //have it render at click of student name
   $pAddress.setAttribute('id', 'parent-address')
   $pAddress.classList.add('parent-inputs')
 
-
-
   var $pButton = document.createElement('button')
   $pButton.setAttribute('data-id', id)
   $pButton.setAttribute('id', 'parent-button')
@@ -176,27 +173,41 @@ function renderParentInfo (id) { //have it render at click of student name
     var info = {
       id: id,
       name: $pName.value,
-      address: $pAddress.value,
-      phone: $pPhone.value
+      phone: $pPhone.value,
+      address: $pAddress.value
     }
-    parents.push(info)
-    $container.innerHTML = '' //after submit click, make it disappear
 
-    switch(id) {
-      case "parent-info":
-    }
-  })
-  return $container
-}
+    $container.innerHTML = '' //after submit click, make it disappear
+    parents.push(info)
+    $container.appendChild(newParents())
+
+    })
+    return $container
+
+  }
+
+
 
 var parents = []
-var $parentsBox = document.createElement('div')
-$parentsBox.setAttribute('id', 'parents-box')
+
+
 function newParents() {
+  var $parentsBox = document.createElement('div')
+  $parentsBox.setAttribute('id', 'parents-box')
   var $name = document.createElement('p')
   var $phone = document.createElement('p')
   var $address = document.createElement('p')
   $parentsBox.appendChild($name)
   $parentsBox.appendChild($address)
   $parentsBox.appendChild($phone)
+
+  $name.textContent = parents[0].name
+  $phone.textContent = parents[0].phone
+  $address.textContent = parents[0].address
+  return $parentsBox
+
+}
+
+function setNewParents () {
+
 }
