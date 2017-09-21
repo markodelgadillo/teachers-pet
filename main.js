@@ -31,6 +31,9 @@ function renderStudentDetails(id) {
 
 function renderNotesForm(id) {
   var $form = document.createElement('form')
+  var $label = document.createElement('label')
+  $label.setAttribute('id', 'student-notes-label')
+  $label.textContent = 'Notes'
   var $text = document.createElement('textarea')
   $text.setAttribute('row', '3')
   $text.setAttribute('maxlength', '300')
@@ -41,6 +44,7 @@ function renderNotesForm(id) {
   $button.classList.add('button')
   $button.textContent = 'Submit'
 
+  $form.appendChild($label)
   $form.appendChild($text)
   $form.appendChild($button)
   $button.addEventListener('click', function(event) {
@@ -157,6 +161,7 @@ function renderParentInfo (id) { //have it render at click of student name
   $pButton.setAttribute('data-id', id)
   $pButton.setAttribute('id', 'parent-button')
   $pButton.classList.add('button')
+  $pButton.textContent = 'Set'
 
   $container.appendChild($label1)
   $container.appendChild($pName)

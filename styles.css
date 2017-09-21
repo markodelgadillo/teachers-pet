@@ -38,8 +38,8 @@ h2 {
 
 #notes-btn {
   float: right;
-  top: 250px;
-  right: 80px;
+  top: 220px;
+  right: 50px;
 }
 
 .screen-left {
@@ -168,7 +168,7 @@ h2 {
   left: 270px;
   background-color: lightblue;
   width: 200px;
-  height: 130px;
+  height: 150px;
   margin: 70px auto auto 30px;
   padding-left: 30px;
 }
@@ -179,14 +179,10 @@ h2 {
   height: 75px;
 }
 
-span {
-  display: block;
+#student-notes-label {
   position: relative;
-  width: 100%;
-  text-align: center;
-  background-color: #4e76ff;
-  color: white;
-  border-bottom: 3px solid #2544b2;
+  top: 167px;
+  left: 65px;
 }
 
 #p-info-input {
@@ -229,12 +225,14 @@ textarea {
 
 #notes-area {
   position: relative;
-  top: 130px;
-  left: 150px;
+  top: 170px;
+  left: 114px;
 }
 
 #parent-button {
   position: relative;
+  top: 10px;
+  left: 130px;
 }
 
 #pName {
