@@ -60,7 +60,7 @@ h2 {
 }
 
 .parent-inputs {
-  margin: 5px 0;
+  margin: 1px 0 0 35px;
 }
 
 #container-users {
@@ -136,6 +136,12 @@ h2 {
   padding: 15px 0;
   background-color: pink;
   text-align: center;
+}
+
+.labels {
+  position: relative;
+  top: 20px;
+  right: 20px;
 }
 
 #student-container {
@@ -229,4 +235,10 @@ textarea {
 
 #parent-button {
   position: relative;
+}
+
+#pName {
+  position: relative;
+  top: 26px;
+  right: 146px;
 }

@@ -119,26 +119,35 @@ for (var i = 0; i < $users.length; i++) {
 //NEW CODE STARTS here
 //function to render the parent info box
 function renderParentInfo (id) { //have it render at click of student name
-  var $container = document.createElement('div')
+  var $container = document.createElement('form')
   $container.setAttribute('id', 'parent-info')
   $container.textContent = "Parent Information:"
 
-  var $label = document.createElement('label')
-  $label.textContent = "Name"
+  var $label1 = document.createElement('label')
+  $label1.setAttribute('id', 'pName')
+  $label1.classList.add('labels')
+  $label1.textContent = "Name"
   var $pName = document.createElement('input')
   $pName.setAttribute('type', 'text')
   $pName.setAttribute('id', 'parent-name')
   $pName.classList.add('parent-inputs')
 
 
+  var $label2 = document.createElement('label')
+  $label2.setAttribute('id', 'pPhone')
+  $label2.classList.add('labels')
+  $label2.textContent = "Phone"
   var $pPhone = document.createElement('input')
-  $pPhone.setAttribute('type', 'text')
+  $pPhone.setAttribute('type', 'tel')
   $pPhone.setAttribute('id', 'parent-phone')
   $pPhone.classList.add('parent-inputs')
 
-
+  var $label3 = document.createElement('label')
+  $label3.setAttribute('id', 'pAddress')
+  $label3.classList.add('labels')
+  $label3.textContent = "Address"
   var $pAddress = document.createElement('input')
-  $pAddress.setAttribute('type', 'text')
+  $pAddress.setAttribute('type', 'address')
   $pAddress.setAttribute('id', 'parent-address')
   $pAddress.classList.add('parent-inputs')
 
@@ -149,8 +158,11 @@ function renderParentInfo (id) { //have it render at click of student name
   $pButton.setAttribute('id', 'parent-button')
   $pButton.classList.add('button')
 
+  $container.appendChild($label1)
   $container.appendChild($pName)
+  $container.appendChild($label2)
   $container.appendChild($pPhone)
+  $container.appendChild($label3)
   $container.appendChild($pAddress)
   $container.appendChild($pButton)
 
@@ -167,12 +179,7 @@ function renderParentInfo (id) { //have it render at click of student name
 
     switch(id) {
       case "parent-info":
-
     }
-
-
-
-
   })
   return $container
 }
