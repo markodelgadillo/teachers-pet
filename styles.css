@@ -44,7 +44,7 @@ h2 {
 
 .screen-left {
   width: 275px;
-  height: auto;
+  height: 490px;
   border-right: 3px groove black;
 }
 
@@ -55,7 +55,7 @@ h2 {
   height: 500px;
   float: right;
   position: relative;
-  bottom: 170px;
+  bottom: 490px;
   right: 30px;
 }
 

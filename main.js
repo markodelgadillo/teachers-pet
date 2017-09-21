@@ -9,6 +9,7 @@ function renderStudentDetails(id) {
   var $studentName = document.createElement('p')
   var $studentGrade = document.createElement('p')
   var $studentColor = document.createElement('p')
+  var $screenRight = document.querySelector('.screen-right')
   var $linebreak = document.createElement('br')
 
   for (var i = 0; i < students.length; i++) {
@@ -21,7 +22,7 @@ function renderStudentDetails(id) {
       $studentDetails.appendChild($studentName)
       $studentDetails.appendChild($studentGrade)
       $studentDetails.appendChild(renderNotesForm(id))
-      $studentDetails.appendChild(renderParentInfo(id))
+      $screenRight.appendChild(renderParentInfo(id))
     }
   }
   return $studentDetails
@@ -52,8 +53,9 @@ function renderNotesForm(id) {
       id: id,
       text: $text.value
     }
-
     notes.push(note)
+    $text.value= ''
+
   })
 
   return $form
@@ -204,10 +206,20 @@ function newParents() {
   $name.textContent = parents[0].name
   $phone.textContent = parents[0].phone
   $address.textContent = parents[0].address
+
   return $parentsBox
 
 }
 
-function setNewParents () {
 
-}
+// for renderParentInfo, do a for loop
+//if (parent[i].id === id)
+//helper function 'renderParentDetails'
+//make the appending stop within the renderParentInfo if student info exists
+//try pushing the parent data into the student array data and
+//retrieving the information from there to the new div
+
+//make the set button add the parent information to the student array
+//make the parent information div retrieve the information from student array
+//prenvent a second click on a name from erasing the data from
+//the array or the parent info plate
