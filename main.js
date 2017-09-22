@@ -15,8 +15,10 @@ function renderStudentDetails(id) {
   for (var i = 0; i < students.length; i++) {
     if (students[i].id === id) {
       $studentName.textContent = students[i].name
+      $studentName.setAttribute('id', 'student-name')
       $studentName.appendChild($linebreak)
       $studentGrade.textContent = students[i].grade + 'th' + ' ' + 'Grade'
+      $studentGrade.setAttribute('id', 'student-grade')
       $studentGrade.appendChild($linebreak)
 
       $studentDetails.appendChild($studentName)
@@ -196,9 +198,17 @@ var parents = []
 function newParents() {
   var $parentsBox = document.createElement('div')
   $parentsBox.setAttribute('id', 'parents-box')
+  var $title = document.createElement('h2')
+  $title.textContent = "Parent Information"
+  $title.classList.add('parent-set')
   var $name = document.createElement('p')
+  $name.classList.add('parent-set')
   var $phone = document.createElement('p')
+  $phone.classList.add('parent-set')
   var $address = document.createElement('p')
+  $address.classList.add('parent-set')
+
+  $parentsBox.appendChild($title)
   $parentsBox.appendChild($name)
   $parentsBox.appendChild($address)
   $parentsBox.appendChild($phone)
