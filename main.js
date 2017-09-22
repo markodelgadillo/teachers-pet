@@ -24,7 +24,7 @@ function renderStudentDetails(id) {
       $studentDetails.appendChild($studentName)
       $studentDetails.appendChild($studentGrade)
       $studentDetails.appendChild(renderNotesForm(id))
-      $screenRight.appendChild(renderParentInfo(id))
+      $studentDetails.appendChild(renderParentInfo(id))
     }
   }
   return $studentDetails
@@ -62,6 +62,7 @@ function renderNotesForm(id) {
 
   return $form
 }
+
 function renderStudentMenu(students) {
   var $menu = document.createElement('ul')
   $menu.textContent = 'Students'
@@ -181,19 +182,14 @@ function renderParentInfo (id) { //have it render at click of student name
       address: $pAddress.value
     }
 
-    $container.innerHTML = '' //after submit click, make it disappear
     parents.push(info)
+    $container.innerHTML = ''
     $container.appendChild(newParents())
-
     })
     return $container
-
   }
 
-
-
 var parents = []
-
 
 function newParents() {
   var $parentsBox = document.createElement('div')
@@ -213,14 +209,27 @@ function newParents() {
   $parentsBox.appendChild($address)
   $parentsBox.appendChild($phone)
 
-  $name.textContent = parents[0].name
-  $phone.textContent = parents[0].phone
-  $address.textContent = parents[0].address
+  for (var i = 0; i < parents.length; i++) {
+    if (students[i].id === parents[i].id){
+    $name.textContent = parents[i].name
+    $phone.textContent = parents[i].phone
+    $address.textContent = parents[i].address
+    }
+  }
 
   return $parentsBox
-
 }
 
+
+//new parents test function
+
+function newParents2(students) {
+  for (var i = 0; i < students.length; i++){
+    if (students[i].id === parents[0].id) {
+    students[i].push(parents)
+    }
+  }
+}
 
 // for renderParentInfo, do a for loop
 //if (parent[i].id === id)
