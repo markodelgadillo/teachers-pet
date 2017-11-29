@@ -14,14 +14,15 @@ function userMenu(users) {
     const $li = document.createElement('li')
     $li.addEventListener('click', selectUser)
     $li.textContent = user
-    $li.setAttribute('class', user.toLowerCase())
+    $li.setAttribute('id', user.toLowerCase())
+    $li.setAttribute('class', 'menu1-btns')
     $ul.appendChild($li)
   })
   return $ul
 }
 
 function selectUser(event) {
-  const id = event.target.getAttribute('class')
+  const id = event.target.getAttribute('id')
 
   switch (id) {
     case 'teacher':
