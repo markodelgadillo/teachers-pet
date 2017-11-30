@@ -3,7 +3,9 @@ const $container = document.querySelector('.container')
 const $label = document.createElement('h2')
 $label.textContent = 'Teachers P.E.T.'
 const $nav = document.createElement('nav')
+$nav.setAttribute('class', 'nav')
 const $ul = document.createElement('ul')
+$ul.setAttribute('class', 'submenu')
 
 $container.appendChild($label)
 $container.appendChild($nav)
@@ -21,11 +23,14 @@ function userMenu(users) {
   return $ul
 }
 
+function teacherUI() {}
+
 function selectUser(event) {
   const id = event.target.getAttribute('id')
 
   switch (id) {
     case 'teacher':
+      // $container.innerHTML = ''
       console.log(id)
       // add function that renders the teacher UI
       break

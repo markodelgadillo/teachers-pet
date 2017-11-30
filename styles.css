@@ -7,7 +7,9 @@
   display: none;
 }
 
-body {
+html {
+  background-image: url(background.png);
+  width: 1280px;
   min-width: 900px;
   background-color: lightgrey;
 }
@@ -59,7 +61,7 @@ h2 {
   right: 30px;
 }
 
-#container-users {
+.container {
   width: 300px;
   height: 300px;
   background-color: white;
@@ -68,9 +70,10 @@ h2 {
   margin: 100px auto;
 }
 
-#nav-wrap {
+.nav {
+  width: 200px;
+  margin: 40px auto;
   font-size: 20px;
-  width: 150px;
   text-align: center;
 }
 
@@ -83,14 +86,7 @@ h2 {
   border-bottom: 4px solid black;
 }
 
-.submenu {
-  position: relative;
-  right: 40px;
-}
-
 #users {
-  width: 200px;
-  margin: 40px auto;
 }
 
 .menu1-btns {
